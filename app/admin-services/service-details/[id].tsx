@@ -1,7 +1,7 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useState } from "react";
 import { View, Text, ScrollView, Button,Modal } from "react-native";
-import { companyData } from "../../constants/MockData";
+import { companyData } from "@/constants/MockData";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { TouchableOpacity } from "react-native";
 //import Dropdown from '@/components/AdminServicesComp/Dropdown'

@@ -30,7 +30,7 @@ export const ServiceRequestCard: React.FC<ServiceRequestProps> = ({ request }) =
   return (
     <TouchableOpacity
       className="p-3 my-2 bg-white shadow drop-shadow- rounded-md"
-      onPress={() => router.push({ pathname: "/service-details/[id]", params: { id: request.id } })}
+      onPress={() => router.push({ pathname: "/admin-services/service-details/[id]", params: { id: request.id } })}
     >
         <View className="flex-row justify-between">
             <Text className="text-lg font-bold">{request.title} [{request.status}]</Text>

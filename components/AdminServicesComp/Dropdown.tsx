@@ -22,12 +22,12 @@ export const Dropdown: React.FC<DropdownProps> = ({
         style={{
           inputAndroid: {
             color: "black",
-            paddingHorizontal: 10,
+            paddingHorizontal: 8,
             fontSize: 14,
           },
           inputIOS: {
             color: "black",
-            paddingHorizontal: 10,
+            paddingHorizontal: 8,
             fontSize: 14,
           },
         }}

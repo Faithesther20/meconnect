@@ -38,3 +38,299 @@ export const companyData = [
     },
   ];
   
+
+  // export const companyMachineData = [
+  //   {
+  //     company: "ABCD Company",
+  //     machines: [
+  //       {
+  //         id: "1",
+  //         serial: "JV55 - V123-0029",
+  //         installedDate: "01 May 2024",
+  //         location: "Coimbatore, TN",
+  //         status: "ACTIVE",
+  //       },
+  //       {
+  //         id: "2",
+  //         serial: "JV55 - V123-0030",
+  //         installedDate: "05 May 2024",
+  //         location: "Mumbai, MH",
+  //         status: "ACTIVE",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     company: "EUFIF Company",
+  //     machines: [
+  //       {
+  //         id: "3",
+  //         serial: "JV55 - V123-0045",
+  //         installedDate: "10 June 2024",
+  //         location: "Delhi, DL",
+  //         status: "ACTIVE",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     company: "MJWE Company",
+  //     machines: [
+  //       {
+  //         id: "4",
+  //         serial: "JV55 - V123-0050",
+  //         installedDate: "15 July 2024",
+  //         location: "Chennai, TN",
+  //         status: "ACTIVE",
+  //       },
+  //     ],
+  //   },
+  // ];
+  
+  export const companyMachineData = [
+    {
+      company: "ABCD Company",
+      machines: [
+        {
+          id: "1",
+          serial: "JV55 - V123-0029",
+          installedDate: "01 May 2024",
+          location: "Coimbatore, TN",
+          status: "ACTIVE",
+          pending: false, // ✅ pending
+        },
+        {
+          id: "2",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+        {
+          id: "3",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: false, // ✅ Pending Approval
+        },
+        {
+          id: "4",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+      ],
+    },
+    {
+      company: "EUFIF Company",
+      machines: [
+        {
+          id: "3",
+          serial: "JV55 - V123-0045",
+          installedDate: "10 June 2024",
+          location: "Delhi, DL",
+          status: "ACTIVE",
+          pending: false,
+        },
+      ],
+    },
+    {
+      company: "MJWE Company",
+      machines: [
+        {
+          id: "4",
+          serial: "JV55 - V123-0050",
+          installedDate: "15 July 2024",
+          location: "Chennai, TN",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+      ],
+    },
+  ];
+  export const customersData = [
+    {
+      custID : "Cust1",
+      customer: "ABCD Company",
+      customerDetails:{
+        customerName:"Amadu Bello",
+        pendingApproval:true,
+        starred:false,
+        needSetting:true
+      },
+      machines: [
+        {
+          id: "1",
+          serial: "JV55 - V123-0029",
+          installedDate: "01 May 2024",
+          location: "Coimbatore, TN",
+          status: "ACTIVE",
+          pending: false, // ✅ pending
+        },
+        {
+          id: "2",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+        {
+          id: "3",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: false, // ✅ Pending Approval
+        },
+        {
+          id: "4",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+      ],
+    },
+    {
+      custID : "Cust2",
+      customer: "ABCD Company",
+      customerDetails:{
+        customerName:"Victor Micheal",
+        pendingApproval:false,
+        starred:true,
+        needSetting:true
+
+      },
+      machines: [
+        {
+          id: "1",
+          serial: "JV55 - V123-0029",
+          installedDate: "01 May 2024",
+          location: "Coimbatore, TN",
+          status: "ACTIVE",
+          pending: false, // ✅ pending
+        },
+        {
+          id: "2",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+        {
+          id: "3",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: false, // ✅ Pending Approval
+        },
+        {
+          id: "4",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+      ],
+    },
+   
+    {
+      custID : "Cust3",
+      customer: "ABCD Company",
+      customerDetails:{
+        customerName:"Victor Micheal",
+        pendingApproval:false,
+        starred:true,
+        needSetting:false
+
+      },
+      machines: [
+        {
+          id: "1",
+          serial: "JV55 - V123-0029",
+          installedDate: "01 May 2024",
+          location: "Coimbatore, TN",
+          status: "ACTIVE",
+          pending: false, // ✅ pending
+        },
+        {
+          id: "2",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+        {
+          id: "3",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: false, // ✅ Pending Approval
+        },
+        {
+          id: "4",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+      ],
+    },
+    {
+      custID : "Cust4",
+      customer: "EFC Group of companies",
+      customerDetails:{
+        customerName:"Gabriel Matthew",
+        pendingApproval:true,
+        starred:true,
+        needSetting:true
+
+      },
+      machines: [
+        {
+          id: "1",
+          serial: "JV55 - V123-0029",
+          installedDate: "01 May 2024",
+          location: "Coimbatore, TN",
+          status: "ACTIVE",
+          pending: false, // ✅ pending
+        },
+        {
+          id: "2",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+        {
+          id: "3",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: false, // ✅ Pending Approval
+        },
+        {
+          id: "4",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+      ],
+    },
+   
+  ];
+  
