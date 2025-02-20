@@ -1,3 +1,5 @@
+import images from '@/constants/images';
+
 export const companyData = [
     {
       id: "1",
@@ -333,4 +335,12 @@ export const companyData = [
     },
    
   ];
+
+export const promotionBannerData = [
+  {
+    id: 1,
+    bannerImg:images.promotion_banner,
+    expiryDate:"24-01-2025"
+  }
+]
   

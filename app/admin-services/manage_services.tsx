@@ -39,7 +39,7 @@ export default function ManageServices() {
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         {/* Header */}
         <View className="flex-row justify-between mt-5">
-          <Text className="text-secondary font-bold text-2xl">
+          <Text className="text-secondary font-bold text-2xl ">
             Service Requests
           </Text>
           <TouchableOpacity onPress={toggleMenu}>
@@ -48,7 +48,7 @@ export default function ManageServices() {
         </View>
 
             {/* Dropdown Menu */}
-         {menuVisible && (
+         {/* {menuVisible && (
           <View className="absolute right-5 top-16 bg-white shadow-md rounded-lg p-3 w-48" style={{ zIndex: 10, elevation: 10 }} >
             <TouchableOpacity className="py-2"  onPress={() => console.log("Manage Machines Clicked")} >
               <Text className="text-black text-lg">Manage Customers</Text>
@@ -60,13 +60,13 @@ export default function ManageServices() {
               <Text className="text-black text-lg">Admin</Text>
             </TouchableOpacity>
           </View>
-        )}
+        )} */}
 
         {/* Service Requests Counter & Add Button */}
         <View className="flex-row justify-between items-center mt-2">
           {/* Left Side: Counter & Add Button */}
           <View className="flex-row gap-2 items-center">
-            <Text className="text-lg">Service Requests (12)</Text>
+            <Text className="text-lg ">Service Requests (12)</Text>
             <TouchableOpacity>
               <Feather name="plus-square" size={24} color={secondaryColor} />
             </TouchableOpacity>

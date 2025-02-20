@@ -246,11 +246,11 @@ export default function CustomerApproval() {
       </TouchableOpacity>
               <Text className="text-lg  text-center">Customer registration approved</Text>
               {/* <Text className="mt-2 text-gray-600">{request.title} - {id}</Text> */}
-              <Text className="mt-2 text-gray-600">ABCD Company - Bangalore  </Text>
+              <Text classwName="mt-2 text-gray-600">ABCD Company - Bangalore  </Text>
               
               <View className="flex-row space-between gap-4 items-center">               
               <TouchableOpacity 
-                className="flex-1  flex-1 items-center  mt-4 border border-red-500 px-4 py-2 rounded-lg"
+                className="flex-1 items-center  mt-4 border border-red-500 px-4 py-2 rounded-lg"
                 onPress={() => setModalVisible(false)}
               >
                 <Text className="text-red">CLOSE</Text>
@@ -259,7 +259,7 @@ export default function CustomerApproval() {
             
               
               <TouchableOpacity 
-                className="flex-1  flex-1 items-center  mt-4 bg-red-500 px-4 py-2 rounded-lg"
+                className="flex-1 items-center  mt-4 bg-red-500 px-4 py-2 rounded-lg"
                 // onPress={() => setModalVisible(false)}
               >
                 <Text className="text-white text-sm">NEXT REQUEST</Text>

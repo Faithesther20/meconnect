@@ -24,7 +24,7 @@ export default function CustomerDetails() {
 //     .flatMap((company) => company.requests)
 //     .find((req) => req.custID === id);
 
-    const getRequestsByCustID = (id) => {
+    const getRequestsByCustID = (id:string) => {
         const customer = customersData.find((company) => company.custID === id);
         // return customer ? customer.machines : [];
         return customer;
