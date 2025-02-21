@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity, Image, ScrollView, ImageBackground } from "react-native";
+import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import {
   FontAwesome,
   Feather,
@@ -10,12 +10,15 @@ import images from "@/constants/images";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { secondaryColor } from "@/constants/Colors";
 import { Link, useRouter } from "expo-router";
-import PromotionCard from "@/components/MarketingServicesComp/ProductCard";
-import ProductCard from "@/components/MarketingServicesComp/PromotionCard";
+// import PromotionCard from "@/components/MarketingServicesComp/ProductCard";
+// import ProductCard from "@/components/MarketingServicesComp/PromotionCard";
 import PromotionList from "@/components/MarketingServicesComp/PromotionList";
 import { Product, Promotion } from "@/types";
 import { ActivityIndicator } from "react-native";
 import ProductList from "@/components/MarketingServicesComp/ProductList";
+// import ProductCard from "@/components/MarketingServicesComp/ProductCard";
+// import PromotionCard from "@/components/MarketingServicesComp/PromotionCard";
+
 
 export default function marketing() {
   const router = useRouter();
@@ -23,53 +26,49 @@ export default function marketing() {
   const [loading, setLoading] = useState<boolean>(true);
   const [products, setProducts] = useState<Product[]>([]);
   const [productloading, setProductLoading] = useState<boolean>(true);
+  const [menuVisible, setMenuVisible] = useState(false);
 
 
   const handleEdit = () => {
     router.push({ pathname: "/marketing-services/about/edit"});
   };
+  const handleTrainingClicked= (id: string) => {
+    //console.log(`Edit product with id: ${id}`);
+     router.push({ pathname: "/marketing-services/training/detail/[id]", params: { id } });
+  };
 
   useEffect(() => {
-    // Simulate API request for promotions
-    setTimeout(() => {
-      const fetchedPromotions: Promotion[] = [
-        { id: "1", imageKey: "promotion_banner" },
-        { id: "2", imageKey: "promotion_banner" },
-        { id: "3", imageKey: "promotion_banner" },
-      ];
+    setLoading(true);
+    setProductLoading(true);
+    
+    Promise.all([
+      new Promise<Promotion[]>(resolve =>
+        setTimeout(() => resolve([
+          { id: "1", imageKey: "promotion_banner" },
+          { id: "2", imageKey: "promotion_banner" },
+          { id: "3", imageKey: "promotion_banner" }
+        ]), 1000)
+      ),
+      new Promise<Product[]>(resolve =>
+        setTimeout(() => resolve([
+          { id: "1", name: "Air Conditioning System", image: images.aircondition },
+          { id: "2", name: "Air Conditioning System", image: images.aircondition },
+          { id: "3", name: "Air Conditioning System", image: images.aircondition }
+        ]), 1500)
+      )
+    ]).then(([fetchedPromotions, fetchedProducts]) => {
       setPromotions(fetchedPromotions);
       setLoading(false);
-    }, 1000);
-
-  
-    // Simulate API request for products
-    setTimeout(() => {
-      const fetchedProducts: Product[] = [
-        {
-          id: "1",
-          name: "Air Conditioning System",
-          image: images.aircondition,
-        },
-        {
-          id: "2",
-          name: "Air Conditioning System",
-          image: images.aircondition,
-        },
-        {
-          id: "3",
-          name: "Air Conditioning System",
-          image: images.aircondition,
-        },
-      ];
       setProducts(fetchedProducts);
       setProductLoading(false);
-    }, 1500);
+    });
   }, []);
+  
 
   return (
     <SafeAreaView>
       <ScrollView>
-        <View className="flex-1 bg-primary p-4">
+        <View className="flex-1 bg-primary p-4 relative">
           {/* Header */}
           <View className="flex-row justify-between items-center mb-4">
             <Image source={images.logo} className="h-10 w-28" />
@@ -89,11 +88,62 @@ export default function marketing() {
                 </TouchableOpacity>
               </View>
 
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => setMenuVisible(!menuVisible)}>
                 <Feather name="menu" size={26} color={secondaryColor} />
               </TouchableOpacity>
             </View>
           </View>
+
+
+
+{/*Menue section */}
+         {
+          menuVisible && (
+            <View className="absolute  top-3 right-3 rounded-2xl bg-white  w-full "style={{ zIndex: 10, elevation: 2 }}>
+            <View  className="p-5 py-8 flex-row justify-between items-center">
+              <Text className="text-secondary text-lg font-bold">
+                Hi, James Daniel
+              </Text>
+            <TouchableOpacity onPress={() => setMenuVisible(!menuVisible)}>
+            <Feather name="x-square" size={26} color={secondaryColor} />
+
+            </TouchableOpacity>
+            </View>
+            <View className="w-full border border-b-black border-1  bg-black"></View>
+            <View className="px-5 pb-8">
+              <TouchableOpacity className="flex-row justify-between items-center py-5 border-b-2 border-gray-300" 
+              onPress={() => router.push({ pathname: "/admin-services/manage_machines" })}>
+                <Text>
+                Manage Machines
+                </Text>
+                <AntDesign name="rightsquareo" size={24} color={secondaryColor} />
+              </TouchableOpacity>
+              <TouchableOpacity className="flex-row justify-between items-center py-5 border-b-2 border-gray-300"
+               onPress={() => router.push({ pathname: "/admin-services/manage_services" })}>
+                <Text>
+                Service request
+                </Text>
+                <AntDesign name="rightsquareo" size={24} color={secondaryColor} />
+              </TouchableOpacity>
+              <TouchableOpacity className="flex-row justify-between items-center py-5 border-b-2 border-gray-300"
+               onPress={() => router.push({ pathname: "/marketing-services/training/show" })}>
+                <Text>
+                Training schedules
+
+                </Text>
+                <AntDesign name="rightsquareo" size={24} color={secondaryColor} />
+              </TouchableOpacity>
+              <TouchableOpacity className="flex-row justify-between items-center py-5 ">
+                <Text>
+                {/* Manage Machines */}
+                </Text>
+              
+              </TouchableOpacity>
+            </View>
+           
+          </View>
+          )
+         }
 
           {/* Section */}
           <View className="mt-7 flex-row justify-between items-center">
@@ -138,7 +188,7 @@ export default function marketing() {
               <View className="bg-secondary w-2 rounded" />
               <Text className="font-bold text-lg">Upcoming Trainings</Text>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity   onPress={() => router.push({ pathname: "/marketing-services/training/show" })}>
               <Text className="text-sm text-secondary ">View All </Text>
             </TouchableOpacity>
           </View>
@@ -172,7 +222,7 @@ export default function marketing() {
                   Reg closes on: 14 Apr
                 </Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity   onPress={() => handleTrainingClicked('1')}>
                 <AntDesign name="rightsquareo" size={24} color="black" />
               </TouchableOpacity>
             </View>
@@ -195,7 +245,7 @@ export default function marketing() {
                   <Text className="text-secondary">0 seats</Text>
                 </Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity    onPress={() => handleTrainingClicked('1')}>
                 <AntDesign name="rightsquareo" size={24} color="black" />
               </TouchableOpacity>
             </View>
@@ -230,7 +280,7 @@ export default function marketing() {
                   Reg closes on: 14 Apr
                 </Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => handleTrainingClicked('1')}>
                 <AntDesign name="rightsquareo" size={24} color="black" />
               </TouchableOpacity>
             </View>
@@ -253,7 +303,7 @@ export default function marketing() {
                   <Text className="text-secondary">0 seats</Text>
                 </Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity   onPress={() => handleTrainingClicked('1')}>
                 <AntDesign name="rightsquareo" size={24} color="black" />
               </TouchableOpacity>
             </View>
@@ -288,7 +338,7 @@ export default function marketing() {
                   Reg closes on: 14 Apr
                 </Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity   onPress={() => handleTrainingClicked('1')}>
                 <AntDesign name="rightsquareo" size={24} color="black" />
               </TouchableOpacity>
             </View>
@@ -311,7 +361,7 @@ export default function marketing() {
                   <Text className="text-secondary">0 seats</Text>
                 </Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity  onPress={() => handleTrainingClicked('1')}>
                 <AntDesign name="rightsquareo" size={24} color="black" />
               </TouchableOpacity>
             </View>
@@ -346,7 +396,7 @@ export default function marketing() {
                   Reg closes on: 14 Apr
                 </Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity    onPress={() => handleTrainingClicked('1')}>
                 <AntDesign name="rightsquareo" size={24} color="black" />
               </TouchableOpacity>
             </View>
@@ -369,11 +419,12 @@ export default function marketing() {
                   <Text className="text-secondary">0 seats</Text>
                 </Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity    onPress={() => handleTrainingClicked('1')}>
                 <AntDesign name="rightsquareo" size={24} color="black" />
               </TouchableOpacity>
             </View>
           </View>
+         
 
           {/*About Mitsubishi Section */}
           <View className="mt-8 flex-row justify-between items-center">

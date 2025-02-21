@@ -152,6 +152,72 @@ export const companyData = [
       ],
     },
   ];
+  export const companyTrainingData = [
+    {
+      company: "April 2023",
+      machines: [
+        {
+          id: "1",
+          serial: "JV55 - V123-0029",
+          installedDate: "01 May 2024",
+          location: "Coimbatore, TN",
+          status: "ACTIVE",
+          pending: false, // ✅ pending
+        },
+        {
+          id: "2",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+        {
+          id: "3",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: false, // ✅ Pending Approval
+        },
+        {
+          id: "4",
+          serial: "JV55 - V123-0030",
+          installedDate: "05 May 2024",
+          location: "Mumbai, MH",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+      ],
+    },
+    {
+      company: "May 2023",
+      machines: [
+        {
+          id: "3",
+          serial: "JV55 - V123-0045",
+          installedDate: "10 June 2024",
+          location: "Delhi, DL",
+          status: "ACTIVE",
+          pending: false,
+        },
+      ],
+    },
+    {
+      company: "MJWE Company",
+      machines: [
+        {
+          id: "4",
+          serial: "JV55 - V123-0050",
+          installedDate: "15 July 2024",
+          location: "Chennai, TN",
+          status: "ACTIVE",
+          pending: true, // ✅ Pending Approval
+        },
+      ],
+    },
+  ];
+
   export const customersData = [
     {
       custID : "Cust1",

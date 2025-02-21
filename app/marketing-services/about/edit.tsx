@@ -1,13 +1,13 @@
 import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
-import { useLocalSearchParams } from "expo-router";
+// import { useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign, Feather, FontAwesome } from "@expo/vector-icons";
 import { secondaryColor } from "@/constants/Colors";
 import { router } from "expo-router";
 import images from "@/constants/images";
-import DateTimePicker from "@react-native-community/datetimepicker";
-import { Platform } from "react-native";
+// import DateTimePicker from "@react-native-community/datetimepicker";
+// import { Platform } from "react-native";
 import { TextInput } from "react-native-paper";
 
 const aboutEdit = () => {
@@ -15,12 +15,12 @@ const aboutEdit = () => {
   const [showPicker, setShowPicker] = useState<boolean>(false);
 
   // Function to handle date change
-  const onChange = (event: any, selectedDate?: Date) => {
-    if (selectedDate) {
-      setDate(selectedDate);
-    }
-    setShowPicker(false); // Hide the picker after selecting a date
-  };
+  // const onChange = (event: any, selectedDate?: Date) => {
+  //   if (selectedDate) {
+  //     setDate(selectedDate);
+  //   }
+  //   setShowPicker(false); // Hide the picker after selecting a date
+  // };
 
   return (
     <SafeAreaView className="p-5">

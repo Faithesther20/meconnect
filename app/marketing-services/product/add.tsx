@@ -61,14 +61,14 @@ const productAdd = () => {
           <Text className="mt-2 font-bold text-lg">Product Name</Text>
           <TextInput
             placeholder="Enter Product Name"
-            className="rounded-lg border bg-white"
+            className="rounded-lg border bg-white p-3"
           />
         </View>
         <View>
           <Text className="mt-2 font-bold text-lg">Product Description</Text>
           <TextInput
             placeholder="Enter Product description"
-            className="rounded-lg border bg-white p- h-[100px]"
+            className="rounded-lg border bg-white p-2 h-[100px]"
             multiline={true}
             numberOfLines={4}
             textAlignVertical="top"

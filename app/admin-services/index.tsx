@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import { FontAwesome, Feather, AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
-import { Svg, Circle } from "react-native-svg";
+// import { Svg, Circle } from "react-native-svg";
 import images from "@/constants/images";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { secondaryColor } from "@/constants/Colors";
 import { useRouter } from "expo-router";
 
+
 export default function admin() {
+  const [menuVisible, setMenuVisible] = useState(false);
   // Circular Progress Props
   const progress = 0.8; // 80%
   const radius = 25;
   const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference * (1 - progress);
+  // const strokeDashoffset = circumference * (1 - progress);
+  
  
   const router = useRouter();
   // Section Data
@@ -56,11 +59,62 @@ export default function admin() {
               </View>
             
 
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => setMenuVisible(!menuVisible)}>
                 <Feather name="menu" size={26} color={secondaryColor} />
               </TouchableOpacity>
             </View>
           </View>
+
+
+          {/*Menue section */}
+         {
+          menuVisible && (
+            <View className="absolute  top-3 right-3 rounded-2xl bg-white  w-full "style={{ zIndex: 10, elevation: 2 }}>
+            <View  className="p-5 py-8 flex-row justify-between items-center">
+              <Text className="text-secondary text-lg font-bold">
+                Hi, James Daniel
+              </Text>
+            <TouchableOpacity onPress={() => setMenuVisible(!menuVisible)}>
+            <Feather name="x-square" size={26} color={secondaryColor} />
+
+            </TouchableOpacity>
+            </View>
+            <View className="w-full border border-b-black border-1  bg-black"></View>
+            <View className="px-5 pb-8">
+              <TouchableOpacity className="flex-row justify-between items-center py-5 border-b-2 border-gray-300" 
+              onPress={() => router.push({ pathname: "/admin-services/manage_machines" })}>
+                <Text>
+                Manage Machines
+                </Text>
+                <AntDesign name="rightsquareo" size={24} color={secondaryColor} />
+              </TouchableOpacity>
+              <TouchableOpacity className="flex-row justify-between items-center py-5 border-b-2 border-gray-300"
+               onPress={() => router.push({ pathname: "/admin-services/manage_services" })}>
+                <Text>
+                Service request
+                </Text>
+                <AntDesign name="rightsquareo" size={24} color={secondaryColor} />
+              </TouchableOpacity>
+              <TouchableOpacity className="flex-row justify-between items-center py-5 border-b-2 border-gray-300"
+               onPress={() => router.push({ pathname: "/marketing-services/training/show" })}>
+                <Text>
+                Training schedules
+
+                </Text>
+                <AntDesign name="rightsquareo" size={24} color={secondaryColor} />
+              </TouchableOpacity>
+              <TouchableOpacity className="flex-row justify-between items-center py-5 ">
+                <Text>
+                {/* Manage Machines */}
+                </Text>
+              
+              </TouchableOpacity>
+            </View>
+           
+          </View>
+          )
+         }
+
           
 
           {/* Cards */}
@@ -91,7 +145,7 @@ export default function admin() {
                 strokeLinecap="round"
               />
               <Text className="absolute text-center w-full text-lg font-bold">{8}</Text>
-            </Svg> */}
+            
                 <Image source={images.chart} />
                 {/* Status List */}
                 <View className="ml-6 flex-1">
@@ -132,7 +186,7 @@ export default function admin() {
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => router.push(`/admin-services/${section.btn2[1]}` )} 
-                 className="flex-1 flex-row justify-center bg-black px-4 py-3 rounded-xl">
+                 className="flex-1 flex-row justify-center bg-black px-4 py-3 rounded-xl" >
                   <Text className="text-white text-sm font-semibold">
                     {section.btn2[0]}
                   </Text>

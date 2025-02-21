@@ -1,6 +1,6 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useState } from "react";
-import { View, Text, ScrollView, Button,Modal, Image } from "react-native";
+import { View, Text, ScrollView, Image } from "react-native";
 import { customersData } from "@/constants/MockData";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { TouchableOpacity } from "react-native";
@@ -8,18 +8,21 @@ import { TouchableOpacity } from "react-native";
 import { secondaryColor } from "@/constants/Colors";
 import {AntDesign, Feather, FontAwesome }from "@expo/vector-icons";
 
-import RNPickerSelect from "react-native-picker-select";
-import { RadioButton } from "react-native-paper";
+// import RNPickerSelect from "react-native-picker-select";
+// import { RadioButton } from "react-native-paper";
 import images from "@/constants/images";
 export default function CustomerDetails() {
  
-  const [selectedEngineer, setSelectedEngineer] = useState("");
-  const [selectedSlot, setSelectedSlot] = useState("");
-  const [modalVisible, setModalVisible] = useState(false); // Modal visibility state
+  // const [selectedEngineer, setSelectedEngineer] = useState("");
+  // const [selectedSlot, setSelectedSlot] = useState("");
+  // const [modalVisible, setModalVisible] = useState(false); // Modal visibility state
 
   const router = useRouter();
 
-  const { id } = useLocalSearchParams(); // Get ID from the URL
+
+  const { id } = useLocalSearchParams();
+const custID = Array.isArray(id) ? id[0] : id; // Ensure id is a string
+
 //   const request = customersData
 //     .flatMap((company) => company.requests)
 //     .find((req) => req.custID === id);
@@ -30,9 +33,8 @@ export default function CustomerDetails() {
         return customer;
     };
 
-    const request = getRequestsByCustID(id);
-    const machines = request.machines;
-
+    const request = custID ? getRequestsByCustID(custID) : null;
+    const machines = request ? request.machines : [];
 
   if (!request) {
     return (

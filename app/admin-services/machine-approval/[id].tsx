@@ -1,21 +1,21 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useState } from "react";
-import { View, Text, ScrollView, Button,Modal } from "react-native";
-import { companyData, companyMachineData } from "@/constants/MockData";
+import { View, Text, ScrollView } from "react-native";
+import { companyMachineData } from "@/constants/MockData";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { TouchableOpacity } from "react-native";
 //import Dropdown from '@/components/AdminServicesComp/Dropdown'
 import { secondaryColor } from "@/constants/Colors";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from '@expo/vector-icons/Feather';
-import RNPickerSelect from "react-native-picker-select";
-import { RadioButton } from "react-native-paper";
+// import RNPickerSelect from "react-native-picker-select";
+// import { RadioButton } from "react-native-paper";
 
 export default function MachineApproval() {
  
-  const [selectedEngineer, setSelectedEngineer] = useState("");
-  const [selectedSlot, setSelectedSlot] = useState("");
-  const [modalVisible, setModalVisible] = useState(false); // Modal visibility state
+  // const [selectedEngineer, setSelectedEngineer] = useState("");
+  // const [selectedSlot, setSelectedSlot] = useState("");
+   const [modalVisible, setModalVisible] = useState(false); // Modal visibility state
 
   const router = useRouter();
 

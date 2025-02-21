@@ -10,6 +10,7 @@ export default {
     company: require("@/assets/images/marketing/company.png"),
     news: require("@/assets/images/marketing/news.png"),
     location: require("@/assets/images/marketing/location.png"),
+   worker: require("@/assets/images/marketing/worker.png"),
   };
   
   

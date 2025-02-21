@@ -3,16 +3,15 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
-  Image,
-  TextInput,
+
 } from "react-native";
 import React, { useState } from "react";
-import { useLocalSearchParams } from "expo-router";
+// import { useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign, Feather, MaterialIcons } from "@expo/vector-icons";
 import { secondaryColor } from "@/constants/Colors";
 import { router } from "expo-router";
-import images from "@/constants/images";
+// import images from "@/constants/images";
 import DateTimePicker from "@react-native-community/datetimepicker";
 // import DateTimePicker from "react-native-modal-datetime-picker";
 import { Platform } from "react-native";

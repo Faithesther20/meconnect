@@ -1,14 +1,14 @@
-import { StatusBar } from "expo-status-bar";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+// import { StatusBar } from "expo-status-bar";
+import { Text, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Feather, Ionicons } from "@expo/vector-icons";
-import { useState } from "react";
+// import { Feather, Ionicons } from "@expo/vector-icons";
+// import { useState } from "react";
 
-import { companyData } from "../constants/MockData";
-import { Dropdown } from "../components/AdminServicesComp/Dropdown";
-import { Searchbar } from "../components/AdminServicesComp/Searchbar";
-import { ServiceRequestList } from "../components/AdminServicesComp/ServiceRequestList";
-import { secondaryColor } from "@/constants/Colors";
+// import { companyData } from "../constants/MockData";
+// import { Dropdown } from "../components/AdminServicesComp/Dropdown";
+// import { Searchbar } from "../components/AdminServicesComp/Searchbar";
+// import { ServiceRequestList } from "../components/AdminServicesComp/ServiceRequestList";
+// import { secondaryColor } from "@/constants/Colors";
 import {useRouter} from 'expo-router';
 
 

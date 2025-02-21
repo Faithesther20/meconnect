@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
-import { useLocalSearchParams } from "expo-router";
+// import { useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign, Feather, FontAwesome } from "@expo/vector-icons";
 import { secondaryColor } from "@/constants/Colors";
@@ -10,7 +10,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import { Platform } from "react-native";
 
 const promotionEdit = () => {
-  const { id } = useLocalSearchParams();
+  // const { id } = useLocalSearchParams();
 
   const [date, setDate] = useState<Date>(new Date());
     const [showPicker, setShowPicker] = useState<boolean>(false);

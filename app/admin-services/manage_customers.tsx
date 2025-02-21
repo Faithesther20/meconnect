@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity, Touchable } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity} from "react-native";
 import { useState } from "react";
 import {
   AntDesign,
@@ -11,7 +11,6 @@ import { secondaryColor } from "@/constants/Colors";
 import { SafeAreaView } from "react-native-safe-area-context";
 import images from "@/constants/images";
 import { Image } from "react-native";
-import RNPickerSelect from "react-native-picker-select";
 import { Dropdown } from "@/components/AdminServicesComp/Dropdown";
 
 export default function ManageCustomers() {
@@ -19,15 +18,15 @@ export default function ManageCustomers() {
   const [activeTab, setActiveTab] = useState<"customers" | "pending">(
     "customers"
   );
-  const [expandedCompanies, setExpandedCompanies] = useState<string[]>([]);
+  // const [expandedCompanies, setExpandedCompanies] = useState<string[]>([]);
   const router = useRouter();
-  const toggleCompany = (company: string) => {
-    setExpandedCompanies((prev) =>
-      prev.includes(company)
-        ? prev.filter((c) => c !== company)
-        : [...prev, company]
-    );
-  };
+  // const toggleCompany = (company: string) => {
+  //   setExpandedCompanies((prev) =>
+  //     prev.includes(company)
+  //       ? prev.filter((c) => c !== company)
+  //       : [...prev, company]
+  //   );
+  // };
 
   // ✅ Filter counts based on pending status
   const totalPending = companyMachineData.reduce(
